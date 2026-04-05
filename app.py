@@ -75,7 +75,7 @@ def load_model():
             url = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"
             gdown.download(url, MODEL_PATH, quiet=False)
 
-    model = BrainTumorCNN()
+    model = brain_tumor()
     model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device("cpu")))
     model.eval()
     return model
